@@ -6,8 +6,8 @@ SELECT
     pm.meta_value AS views,
     -- p.guid,
     /*might want to adjust based on how your post URLs are structured*/
-    CONCAT(SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(post_date as date) AS VARCHAR(20)),'-','/'), '/', post_name) AS URL,
-    CONCAT('- [', p.post_title, ']', '(', SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(post_date as date) AS VARCHAR(20)),'-','/'), '/', post_name, ')') AS MarkdownFormattedLink
+    CONCAT(SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(p.post_date as date) AS VARCHAR(20)),'-','/'), '/', p.post_name) AS URL,
+    CONCAT('- [', p.post_title, ']', '(', SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(p.post_date as date) AS VARCHAR(20)),'-','/'), '/', p.post_name, ')') AS MarkdownFormattedLink
 FROM
     wpkx_postmeta pm
 INNER JOIN wpkx_posts p ON

@@ -6,7 +6,7 @@ SELECT
     p.post_date,
     pm.meta_value AS yoast_seo_index,
     /*might want to adjust based on how your post URLs are structured*/
-    CONCAT(SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(post_date as date) AS VARCHAR(20)),'-','/'), '/', post_name) AS URL
+    CONCAT(SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(p.post_date as date) AS VARCHAR(20)),'-','/'), '/', p.post_name) AS URL
 FROM
     wpkx_postmeta pm
 INNER JOIN wpkx_posts p ON
@@ -26,7 +26,7 @@ SELECT
     p.post_date,
     pm.meta_value AS yoast_content_score,
     /*might want to adjust based on how your post URLs are structured*/
-    CONCAT(SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(post_date as date) AS VARCHAR(20)),'-','/'), '/', post_name) AS URL
+    CONCAT(SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(p.post_date as date) AS VARCHAR(20)),'-','/'), '/', p.post_name) AS URL
 FROM
     wpkx_postmeta pm
 INNER JOIN wpkx_posts p ON
@@ -46,7 +46,7 @@ SELECT
     p.post_date,
     pm.meta_value AS yoast_inclusive_language_score,
     /*might want to adjust based on how your post URLs are structured*/
-    CONCAT(SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(post_date as date) AS VARCHAR(20)),'-','/'), '/', post_name) AS URL
+    CONCAT(SUBSTRING_INDEX(p.guid,'?',1),REPLACE(CAST(CAST(p.post_date as date) AS VARCHAR(20)),'-','/'), '/', p.post_name) AS URL
 FROM
     wpkx_postmeta pm
 INNER JOIN wpkx_posts p ON
