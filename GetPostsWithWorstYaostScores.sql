@@ -1,6 +1,7 @@
-/*Top 10 published posts where specific Yoast scores are equal to or less than 70*/
+    /*Top 10 published posts where specific Yoast scores are equal to or less than 70*/
 
-/*Top 10 worst Yoast SEO Index score*/
+
+    /*Top 10 worst Yoast SEO Index score*/
 SELECT
     p.post_title,
     p.post_date,
@@ -20,7 +21,8 @@ ORDER BY
     CAST(pm.meta_value AS INTEGER) ASC
 LIMIT 10;
 
-/*Top 10 worst Yoast Content score*/
+
+    /*Top 10 worst Yoast Content score*/
 SELECT
     p.post_title,
     p.post_date,
@@ -40,7 +42,8 @@ ORDER BY
     CAST(pm.meta_value AS INTEGER) ASC
 LIMIT 10;
 
-/*Top 10 worst Yoast Inclusive Language score*/
+
+    /*Top 10 worst Yoast Inclusive Language score*/
 SELECT
     p.post_title,
     p.post_date,
