@@ -36,7 +36,7 @@ INNER JOIN wpkx_posts p ON
 WHERE
     pm.meta_key = 'penci_post_views_count'
     AND p.post_status = 'publish'
-    AND P.post_type = 'post'
+    AND p.post_type = 'post'
 ORDER BY
     CAST(pm.meta_value AS INTEGER) ASC
 LIMIT 10;
