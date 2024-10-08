@@ -46,6 +46,7 @@ FROM
 WHERE 
     p.post_type = 'post'
     AND p.post_status = 'publish'
+    AND p.post_date <> p.post_modified
 ORDER BY  
     p.post_modified DESC 
 LIMIT 10;
