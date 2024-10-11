@@ -15,7 +15,7 @@ INNER JOIN wpkx_posts p ON
 WHERE
     pm.meta_key = '_yoast_wpseo_linkdex'
     AND p.post_status = 'publish'
-    AND P.post_type = 'post'
+    AND p.post_type = 'post'
     AND CAST(pm.meta_value AS INTEGER) <=70
 ORDER BY
     CAST(pm.meta_value AS INTEGER) ASC
@@ -36,7 +36,7 @@ INNER JOIN wpkx_posts p ON
 WHERE
     pm.meta_key = '_yoast_wpseo_content_score'
     AND p.post_status = 'publish'
-    AND P.post_type = 'post'
+    AND p.post_type = 'post'
     AND CAST(pm.meta_value AS INTEGER) <=70
 ORDER BY
     CAST(pm.meta_value AS INTEGER) ASC
@@ -57,7 +57,7 @@ INNER JOIN wpkx_posts p ON
 WHERE
     pm.meta_key = '_yoast_wpseo_inclusive_language_score'
     AND p.post_status = 'publish'
-    AND P.post_type = 'post'
+    AND p.post_type = 'post'
     AND CAST(pm.meta_value AS INTEGER) <=70
 ORDER BY
     CAST(pm.meta_value AS INTEGER) ASC
